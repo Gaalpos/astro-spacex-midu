@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.9.3",
     "@astrojs/preact": "^3.5.3",
     "@astrojs/tailwind": "^5.1.1",
+    "@astrojs/vercel": "^7.8.1",
     "astro": "^4.15.5",
     "preact": "^10.24.0",
     "tailwindcss": "^3.4.12",
