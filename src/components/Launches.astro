@@ -1,0 +1,30 @@
+---
+import { type APISpaceXResponse } from "../types/api";
+import type { optional } from "astro:schema";
+import CardLaunch from "./CardLaunch.astro";
+import { getLatestLaunches } from "../services/spacex.ts";
+
+const launches = await getLatestLaunches();
+---
+
+<div class="grid gap-9 sm:grid-cols-2 lg:grid-cols-3">
+    {
+        launches.map((launch) => (
+            <CardLaunch
+                name={launch.name}
+                id={launch.id}
+                img={launch.links.patch.small}
+                details={launch.details}
+                flightNumber={launch.flight_number}
+                success={launch.success}
+            />
+        ))
+    }
+</div>
+
+<!-- // // <article>
+    // // <h1>{launch.name}</h1>
+    // // <img src={launch.links.patch.small} alt="" />
+    // // <h2>Launch #{launch.id}</h2>
+    // //
+</article> -->

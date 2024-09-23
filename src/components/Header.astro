@@ -1,0 +1,99 @@
+---
+import { Counter } from "./Counter";
+import HeaderButton from "./HeaderButton.astro";
+---
+
+<header transition:persist class="py-8 px-4 mx-auto max-w-xl lg:py-16 lg:px-6">
+    <div class="mx-auto text-center mb-8 lg:mb-16">
+        <h2 class="mb-4 text-5xl tracking-tight font-extrabold text-white">
+            Gaalpos Web
+        </h2>
+        <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+            All about Gaalpos
+        </p>
+    </div>
+
+    <!-- Example of how to use a preact component
+  persisting value between pages 
+  Not working, maybe they change it on newer versions
+  -->
+    <Counter transition:persist client:visible />
+
+    <nav
+        class="flex flex-col items-center justify-between w-full text-center
+        md:flex-row"
+    >
+        <HeaderButton class="text-white" href="/index">
+            <svg
+                slot="before"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-home"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                    d="M5 12l-2 0l9 -9l9 9l-2 0"></path><path
+                    d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path><path
+                    d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path></svg
+            >Home</HeaderButton
+        >
+        <HeaderButton class="text-white" href="https://www.youtube.com/@Gaalpos"
+            ><svg
+                slot="before"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-youtube"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                    d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"
+                ></path><path d="M10 9l5 3l-5 3z"></path></svg
+            >Latest videos</HeaderButton
+        >
+        <HeaderButton
+            class="text-white"
+            href="https://www.youtube.com/@Gaalpos/videos"
+            ><svg
+                slot="before"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-trending-up"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                    d="M3 17l6 -6l4 4l8 -8"></path><path d="M14 7l7 0l0 7"
+                ></path></svg
+            >
+            Best videos</HeaderButton
+        >
+        <HeaderButton class="text-white" href="/about">
+            <svg
+                slot="before"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-info-circle"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                    d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path><path
+                    d="M12 9h.01"></path><path d="M11 12h1v4h1"></path></svg
+            > About
+        </HeaderButton>
+    </nav>
+</header>
