@@ -8,5 +8,7 @@ import preact from '@astrojs/preact';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), preact()],
-  output: 'server'
+  output: 'server',
+  site: 'https://gaalpos.github.io',
+  base: '/astro-spacex-midu',
 });
