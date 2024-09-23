@@ -11,7 +11,5 @@ import vercel from '@astrojs/vercel/serverless';
 export default defineConfig({
   integrations: [tailwind(), preact()],
   output: 'server',
-  site: 'https://gaalpos.github.io',
-  base: '/astro-spacex-midu',
   adapter: vercel(),
 });
